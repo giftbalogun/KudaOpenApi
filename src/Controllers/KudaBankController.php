@@ -25,7 +25,7 @@ class KudabankController extends Controller
         // Kuda URL TEST/LIVE FROM DEVELOPER ACCOUNT
         $this->baseUri = env('KUDA_API_URL');
         // Kuda USER EMAIL FOR DEVELOPER ACCOUNT
-        $this->email = env('KUDA_USER_EMAIL')
+        $this->email = env('KUDA_USER_EMAIL');
     }
 
     // Kuda API NAME NAME_ENQUIRY
