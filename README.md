@@ -3,11 +3,11 @@
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/giftbalogun/kudaApiToken?color=56BEB8">
 
-  <img alt="Issues" src="https://img.shields.io/github/issues/giftbalogun/kudaApiToken?color=56BEB8">
+  <img alt="Issues" src="https://img.shields.io/github/stars/giftbalogun/kudaApiToken?color=56BEB8">
 
   <img alt="Star" src="	https://img.shields.io/github/stars/giftbalogun/kudaApiToken?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/giftbalogun/?style=plastic&color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/giftbalogun/kudaApiToken?style=plastic&color=56BEB8">
 </p>
 
 <!-- Status -->
@@ -30,7 +30,9 @@
 
 ## :dart: About
 
-Describe your project
+Enable your product for local transactions with the KUDA Open API platform! With the KUDA Open APIs you can embed services unto your platform and connect your customers to a wide range of banking services.
+
+Before you proceed, ensure you have a [KUDA Business account](https://business.kuda.com/)!. You can link this account to your profile to get approved for live. 
 
 ## :dart: Installation
 
