@@ -3,9 +3,9 @@
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/giftbalogun/kudaApiToken?color=56BEB8">
 
-  <img alt="Issues" src="https://img.shields.io/github/issues/giftbalogun/?color=56BEB8">
+  <img alt="Issues" src="https://img.shields.io/github/issues/giftbalogun/kudaApiToken?color=56BEB8">
 
-  <img alt="Star" src="https://img.shields.io/github/stars/giftbalogun/?color=56BEB8">
+  <img alt="Star" src="	https://img.shields.io/github/stars/giftbalogun/kudaApiToken?color=56BEB8">
 
   <img alt="License" src="https://img.shields.io/github/license/giftbalogun/?style=plastic&color=56BEB8">
 </p>
@@ -13,7 +13,7 @@
 <!-- Status -->
 
 <h4 align="center">
-	🚧  Laravel_package 🚀 Under construction...  🚧
+	Laravel KudaApiToken for seemless banking via Kuda open pi
 </h4>
 
 <hr>
@@ -39,16 +39,27 @@ Describe your project
 To get the latest version of KudaApiToken, simply require it
 
 ```bash
-composer require giftbalogun/kudapaitoekn
+composer require giftbalogun/kudapaitoken
 ```
 
 Or add the following line to the require block of your `composer.json` file.
 
 ```
-"giftbalogun/kudapaitoekn": "1.0.*"
+"repositories": [
+    {
+        "type": "git",
+        "url": "https://github.com/giftbalogun/kudaApiToken"
+    }
+],
 ```
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+and add This
+
+```
+"giftbalogun/kudapaitoken": "1.0.*"
+```
+
+You'll then need to run `composer install` or `composer update --prefer-dist` to download it and have the autoloader updated.
 
 Open your .env file and add your public key, secret key, merchant email and payment url like so:
 
