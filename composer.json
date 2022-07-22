@@ -1,0 +1,41 @@
+{
+	"name": "giftbalogun/kudaapitoken",
+	"description": "KudaApiToken is a library to allow communication with Kuda Bank API to setup your own fintech apps",
+	"type": "library",
+	"keywords": [
+	  "php",
+	  "github",
+	  "laravel",
+	  "payments",
+	  "subscription",
+	  "kuda",
+	  "kuda bank",
+	  "laravel 8",
+	  "laravel 9"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Gift Balogun",
+			"email": "blgnbalogun53@gmail.com",
+			"homepage": "https://giftbalogun.name.ng"
+		}
+	],
+	"minimum-stability": "stable",
+	"autoload": {
+		"psr-4": {
+			"Giftbalogun\\Kudaapitoken\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Giftbalogun\\Kudaapitoken\\KudaApiTokenServiceProvider"
+			],
+			"aliases": {
+				"KudaApiToken": "Giftbalogun\\Kudaapitoken\\Facades\\KudaApiToken"
+			}
+		}
+	},
+	"require": {}
+}
