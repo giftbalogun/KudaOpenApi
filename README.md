@@ -32,7 +32,7 @@
 
 Enable your product for local transactions with the KUDA Open API platform! With the KUDA Open APIs you can embed services unto your platform and connect your customers to a wide range of banking services.
 
-Before you proceed, ensure you have a [KUDA Business account](https://business.kuda.com/)!. You can link this account to your profile to get approved for live. 
+Before you proceed, ensure you have a [KUDA Business account](https://business.kuda.com/)!. You can link this account to your profile to get approved for live.
 
 ## :dart: Installation
 
@@ -59,6 +59,12 @@ and add This
 
 ```
 "giftbalogun/kudapaitoken": "1.0.*"
+```
+
+and this to config/app.php
+
+```
+Giftbalogun\kudaApiToken\kudaApiTokenServiceProvider::class
 ```
 
 You'll then need to run `composer install` or `composer update --prefer-dist` to download it and have the autoloader updated.
