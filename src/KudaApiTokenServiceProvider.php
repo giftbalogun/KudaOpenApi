@@ -4,8 +4,8 @@ namespace Giftbalogun\Kudaapitoken;
 
 use Illuminate\Support\ServiceProvider;
 
-class KudaApiTokenServiceProvider extends ServiceProvider {
-
+class KudaApiTokenServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -21,8 +21,7 @@ class KudaApiTokenServiceProvider extends ServiceProvider {
     public function boot()
     {
         // Migration
-        $this->loadMigrationsFrom(__DIR__.'/migrations');
-
+        $this->loadMigrationsFrom(__DIR__ . '/migrations');
     }
     /**
      * Register the service provider.
@@ -31,9 +30,8 @@ class KudaApiTokenServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app->singleton('Kudaapitoken', function()
-        {
-            return new KudaApiToken;
+        $this->app->singleton('Kudaapitoken', function () {
+            return new KudaApiToken();
         });
     }
 
@@ -46,5 +44,4 @@ class KudaApiTokenServiceProvider extends ServiceProvider {
     {
         return ['Kudaapitoken'];
     }
-
 }

@@ -3,15 +3,15 @@
 	"description": "KudaApiToken is a library to allow communication with Kuda Bank API to setup your own fintech apps",
 	"type": "library",
 	"keywords": [
-	  "php",
-	  "github",
-	  "laravel",
-	  "payments",
-	  "subscription",
-	  "kuda",
-	  "kuda bank",
-	  "laravel 8",
-	  "laravel 9"
+		"php",
+		"github",
+		"laravel",
+		"payments",
+		"kuda",
+		"kudabank",
+		"laravel 8",
+		"laravel 9",
+		"api"
 	],
 	"license": "MIT",
 	"authors": [
