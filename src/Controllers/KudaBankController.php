@@ -4,7 +4,7 @@ namespace Giftbalogun\Kudaapitoken\Controllers;
 
 use Illuminate\Routing\Controller;
 use Giftbalogun\Kudaapitoken\Controllers\ServiceTypes;
-use Giftbalogun\Kudaapitoken\kuda;
+use Giftbalogun\Kudaapitoken\Kuda;
 
 /**
  * KudaOpenApi laravel package
@@ -52,6 +52,33 @@ class KudabankController extends Controller
         return $result;
     }
 
+    public function update_virtual_account(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::ADMIN_UPDATE_VIRTUAL_ACCOUNT;
+        $payload = $data;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
+    public function disable_virtual_account(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::ADMIN_DISABLE_VIRTUAL_ACCOUNT;
+        $payload = $data;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
+    public function enable_virtual_account(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::ADMIN_ENABLE_VIRTUAL_ACCOUNT;
+        $payload = $data;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
     // Kuda GET BUSINESS ACCOUNT BUSINESS
     //https://kudabank.gitbook.io/kudabank/check-admin-account-balance
     public function getadminbalance(array $data, $requestRef)
@@ -78,6 +105,16 @@ class KudabankController extends Controller
     public function retrieve_virtual_account_balance(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::RETRIEVE_VIRTUAL_ACCOUNT_BALANCE;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
+    //Retrieve a list of all transactions for a business account(admin)
+    //https://kudabank.gitbook.io/kudabank/view-transaction-history/kuda-account-transaction-history
+    public function admin_main_account_transaction(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::ADMIN_MAIN_ACCOUNT_TRANSACTIONS;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;

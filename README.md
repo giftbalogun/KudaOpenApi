@@ -36,7 +36,7 @@ Before you proceed, ensure you have a [KUDA Business account](https://business.k
 
 ## :dart: Installation
 
-[PHP](https://php.net) 5.4+ and [Composer](https://getcomposer.org) are required.
+[PHP](https://php.net) 7.2+ and [Composer](https://getcomposer.org) are required.
 
 To get the latest version of KudaApiToken, simply require it
 
@@ -68,7 +68,8 @@ Open your .env file and add your public key, secret key, merchant email and paym
 ```php
 KUDA_API_TOKEN=XXXXXXXXXXXXXXXXXXXX
 KUDA_API_URL=XXXXXXXXXXXXXXXXXXXXXX
-KUDA_USER_EMAIL=BLGNBALOGUN53@GMAIL.COM
+KUDA_USER_EMAIL=YOUR_EMAIL
+ENVIRONMENT_ENV=LIVE_OR_TEST
 ```
 
 ## :sparkles: Usage
@@ -104,6 +105,7 @@ class CustomController extends Controller
             'phoneNumber' => $request->phone,
             'lastName' => $request->l_name,
             'firstName' => $request->f_name,
+            'businessName' => $request->business_name,
             'trackingReference' => $customer_code,
         ];
         $ref = rand();
