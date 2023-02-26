@@ -90,4 +90,16 @@ class Kuda
             return ['Status' => false, 'Message' => $th->getMessage()];
         }
     }
+
+    public function initController($controller)
+    {
+        $controller = Str::of($controller)->lower()->is('default') ? 'KudaBank' : $controller;
+        $classname = 'Giftbalogun\\Kudaapitoken\\Controllers\\' . $controller . 'Controller';
+
+        if(class_exists($classname) && get_parent_class($classname) === \Illuminate\Routing\Controller::class) {
+            return app($classname);
+        }
+
+        throw new \Exception("Invalid Controller");
+    }
 }
