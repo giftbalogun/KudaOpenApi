@@ -8,6 +8,8 @@ use Giftbalogun\Kudaapitoken\kuda;
 
 class SavingController extends Controller
 {
+    private Kuda $kuda;
+
     public function __construct()
     {
         $this->kuda = new Kuda();

@@ -12,8 +12,10 @@ use Giftbalogun\Kudaapitoken\Kuda;
  * @version 1
  **/
 
-class KudabankController extends Controller
+class KudaBankController extends Controller
 {
+    private Kuda $kuda;
+
     public function __construct()
     {
         $this->kuda = new Kuda();

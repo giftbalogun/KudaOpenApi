@@ -8,10 +8,11 @@ use Giftbalogun\Kudaapitoken\kuda;
 
 class CardController extends Controller
 {
+    private Kuda $kuda;
+
     public function __construct()
     {
         $this->kuda = new Kuda();
     }
 
-    
 }
