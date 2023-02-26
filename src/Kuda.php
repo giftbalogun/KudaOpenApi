@@ -2,28 +2,33 @@
 
 namespace Giftbalogun\Kudaapitoken;
 
+use GuzzleHttp\Client;
+use Illuminate\Support\Str;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Str;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Exception\ClientException;
 
 class Kuda
 {
+    public String $env;
+    public String $apitoken;
+    public String $email;
+    public String $baseUri;
+
     public function __construct()
     {
         //SET WORKING ENVIRONMENT
         $this->env = env('ENVIRONMENT_ENV');
+
         // Kuda API TOKEN FROM DEVELOPER ACCOUNT
         $this->apitoken = env('KUDA_API_TOKEN');
+
         // Kuda USER EMAIL FOR DEVELOPER ACCOUNT
         $this->email = env('KUDA_USER_EMAIL');
-        $this->initializationBaseURL =
-            env('ENVIRONMENT_ENV') === 'LIVE'
-                ? 'https://kuda-openapi.kuda.com/v2'
-                : 'https://kuda-openapi-uat.kudabank.com/v2';
-        $this->baseUri = $this->initializationBaseURL;
+
+        // SET ENVIRONMENT REQUEST ENDPOINT
+        $this->baseUri = Str::of($this->env)->lower()->is('live') ? 'https://kuda-openapi.kuda.com/v2' : 'https://kuda-openapi-uat.kudabank.com/v2';
     }
 
     // GET BEARER TOKEN HERE FOR EVERY REQUEST
