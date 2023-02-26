@@ -18,7 +18,7 @@ class KudaBankController extends Controller
 
     public function __construct()
     {
-        $this->kuda = new Kuda();
+        $this->kuda = app(Kuda::class);
     }
 
     // Kuda API NAME NAME_ENQUIRY

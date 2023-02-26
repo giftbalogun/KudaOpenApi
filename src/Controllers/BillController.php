@@ -12,7 +12,7 @@ class BillController extends Controller
 
     public function __construct()
     {
-        $this->kuda = new Kuda();
+        $this->kuda = app(Kuda::class);
     }
 
 	//https://kudabank.gitbook.io/kudabank/kuda-api-documentation/kuda-bill-paymnet-and-betting-services-api

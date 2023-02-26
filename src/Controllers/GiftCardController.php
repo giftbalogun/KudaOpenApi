@@ -12,7 +12,7 @@ class GiftCardController extends Controller
 
     public function __construct()
     {
-        $this->kuda = new Kuda();
+        $this->kuda = app(Kuda::class);
     }
 
 }

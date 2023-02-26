@@ -12,7 +12,7 @@ class SavingController extends Controller
 
     public function __construct()
     {
-        $this->kuda = new Kuda();
+        $this->kuda = app(Kuda::class);
     }
 
     public function get_spend_save_transactions(array $data, $requestRef)
