@@ -86,14 +86,18 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Giftbalogun\Kudaapitoken\Controllers\KudaBankController;
+use Giftbalogun\Kudaapitoken\Kuda;
 
 class CustomController extends Controller
 {
+    private $kuda;
     private $kudabankservice;
 
     public function __construct()
     {
         $this->kudabankservice = new KudaBankController();
+        ## Or call from Kuda service
+        $this->kuda = new Kuda;
     }
 
     public function createcustomeraccount()
@@ -111,6 +115,11 @@ class CustomController extends Controller
         $ref = rand();
 
         $newcustomeraccount = $this->kudabankservice->create_virtual_account($data, $ref);
+
+        ## Or you can load from the Kuda Service
+        
+        $newcustomeraccount = $this->kuda->initController('default')->create_virtual_account($data, $ref);
+        ## Controllers include 'Bill', 'Card', 'GiftCard', 'KudaBank' | Default is same as KudaBank
 
         $getvaccount = json_decode($newcustomeraccount['data']);
 
