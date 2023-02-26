@@ -8,13 +8,15 @@ use Giftbalogun\Kudaapitoken\kuda;
 
 class BillController extends Controller
 {
+    private Kuda $kuda;
+
     public function __construct()
     {
-        $this->kuda = new Kuda();
+        $this->kuda = app(Kuda::class);
     }
 
 	//https://kudabank.gitbook.io/kudabank/kuda-api-documentation/kuda-bill-paymnet-and-betting-services-api
-	//Use Available Billers - Airtime, Betting, Internet Data, Electricity, Cable TV	
+	//Use Available Billers - Airtime, Betting, Internet Data, Electricity, Cable TV
     public function get_biller_type(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::GET_BILLERS_BY_TYPE;
@@ -22,7 +24,7 @@ class BillController extends Controller
 
         return $result;
     }
-	
+
 	//https://kudabank.gitbook.io/kudabank/kuda-api-documentation/kuda-bill-paymnet-and-betting-services-api/verifying-a-customer-before-purchasing-a-bill
 	public function verify_bill_customer(array $data, $requestRef)
     {

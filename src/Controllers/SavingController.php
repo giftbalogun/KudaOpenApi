@@ -8,9 +8,11 @@ use Giftbalogun\Kudaapitoken\kuda;
 
 class SavingController extends Controller
 {
+    private Kuda $kuda;
+
     public function __construct()
     {
-        $this->kuda = new Kuda();
+        $this->kuda = app(Kuda::class);
     }
 
     public function get_spend_save_transactions(array $data, $requestRef)

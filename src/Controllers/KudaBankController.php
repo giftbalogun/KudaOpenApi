@@ -12,11 +12,13 @@ use Giftbalogun\Kudaapitoken\Kuda;
  * @version 1
  **/
 
-class KudabankController extends Controller
+class KudaBankController extends Controller
 {
+    private Kuda $kuda;
+
     public function __construct()
     {
-        $this->kuda = new Kuda();
+        $this->kuda = app(Kuda::class);
     }
 
     // Kuda API NAME NAME_ENQUIRY
