@@ -1,4 +1,4 @@
-<h1 align="center">KudaApiToken Integration in Laravel</h1>
+<h1 align="center">KudaOpenAPI Integration in Laravel</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/giftbalogun/kudaApiToken?color=56BEB8">
@@ -13,7 +13,7 @@
 <!-- Status -->
 
 <h4 align="center">
-	Laravel KudaApiToken for seemless banking via Kuda open pi
+	Laravel integration with KudaApiToken for seemless Banking via Kuda Bank Open Api
 </h4>
 
 <hr>
@@ -72,9 +72,33 @@ KUDA_USER_EMAIL=YOUR_EMAIL
 ENVIRONMENT_ENV=LIVE_OR_TEST
 ```
 
+## :star: Documentation
+Documentation
+http://kudaapitoken.readthedocs.io (COMING SOON)
+
+Article Medium to Read
+https://medium.com/@giftbalogun/laravel-integration-with-kudaopenapi-663825ecd247
+
 ## :sparkles: Usage
 
+How to send request to the app
+```php
 
+$data = [
+    'email' => $request->email,
+    'phoneNumber' => $request->phone,
+    'lastName' => $request->l_name,
+    'firstName' => $request->f_name,
+    'businessName' => $request->business_name,
+    'trackingReference' => $customer_code,
+];
+# $data is the format for making request to the api 
+
+$ref = rand(); #used to generate randon unique number for the request
+
+```
+
+# Create New Customer Accunt
 ```php
 <?php
 
@@ -127,12 +151,61 @@ class CustomController extends Controller
     }
 }
 ```
+
+# Get Admin Balance
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Giftbalogun\Kudaapitoken\Kuda;
+
+class CustomController extends Controller
+{
+    private $kuda;
+    private $kudabankservice;
+
+    public function __construct()
+    {
+        ##Kuda service
+        $this->kuda = new Kuda;
+    }
+
+    public function getadminbalance()
+    {
+        $data = [];
+
+        $ref = rand();
+
+        ##load from the Kuda Service
+        $balance = $this->kuda->initController('KudaBank')->getadminbalance($data, $ref);
+        ## Controllers include 'Bill', 'Card', 'GiftCard', 'KudaBank' | Default is same as KudaBank
+
+        $getadminbalance = json_decode($balance['data']);
+
+        return $getadminbalance;
+    }
+}
+```
+
 ## :memo: License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-Don't forget to [follow me on twitter](https://twitter.com/amdeone)!
-Made with :heart: by <a href="https://github.com/giftbalogun" target="_blank">Gift Balogun</a>
+## :socail: Follow
+Follow me on social media
+[Medium](https://medium.com/@giftbalogun)!
+[Twitter](https://twitter.com/am_de_one)!
+[Instagram](https://www.instagram.com/am_thd_one/)!
+[LinkedIn](https://www.linkedin.com/in/gift-balogun-907103160/)!
+[Porfolio](https://giftbalogun.name.ng/)!
+
+Made with :heart: by <a href="https://giftbalogun.name.ng" target="_blank">Gift Balogun</a>
 
 &#xa0;
 
