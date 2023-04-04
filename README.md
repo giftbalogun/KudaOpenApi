@@ -3,9 +3,9 @@
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/giftbalogun/kudaApiToken?color=56BEB8">
 
-  <img alt="Issues" src="https://img.shields.io/github/stars/giftbalogun/kudaApiToken?color=56BEB8">
+  <img alt="Star" src="https://img.shields.io/github/stars/giftbalogun/kudaApiToken?color=56BEB8">
 
-  <img alt="Star" src="	https://img.shields.io/github/stars/giftbalogun/kudaApiToken?color=56BEB8">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/giftbalogun/kudaApiToken?color=56BEB8">
 
   <img alt="License" src="https://img.shields.io/github/license/giftbalogun/kudaApiToken?style=plastic&color=56BEB8">
 </p>
@@ -47,18 +47,18 @@ composer require giftbalogun/kudapaitoken
 Or add the following line to the require block of your `composer.json` file.
 
 ```
+"giftbalogun/kudapaitoken": "1.0.*"
+```
+
+and add This
+
+```
 "repositories": [
     {
         "type": "git",
         "url": "https://github.com/giftbalogun/kudaApiToken"
     }
 ],
-```
-
-and add This
-
-```
-"giftbalogun/kudapaitoken": "1.0.*"
 ```
 
 You'll then need to run `composer install` or `composer update --prefer-dist` to download it and have the autoloader updated.
