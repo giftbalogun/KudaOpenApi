@@ -51,9 +51,22 @@ use Giftbalogun\Kudaapitoken\Controllers\SavingController;
 # GiftCard API
 use Giftbalogun\Kudaapitoken\Controllers\GiftCardController;
 
-- coming soon
+- getgiftcard
+- admin_buygiftcard
+- buygiftcard
+- giftcard_tsq
 
 # KudaCard API
 use Giftbalogun\Kudaapitoken\Controllers\CardController;
 
-- coming soon
+- requestcard
+- getcustomercard
+- activatecard
+- deactivatecard
+- managecardlimit
+- managecardchannel
+- getcardpin
+- changecardpin
+- blockcard
+- unblockcard
+

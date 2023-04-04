@@ -28,11 +28,13 @@
 
 <br>
 
-## :dart: About
+## :dart: Getting Started
 
 Enable your product for local transactions with the KUDA Open API platform! With the KUDA Open APIs you can embed services unto your platform and connect your customers to a wide range of banking services.
 
 Before you proceed, ensure you have a [KUDA Business account](https://business.kuda.com/)!. You can link this account to your profile to get approved for live. 
+
+Generate a token from your developer dashboard.
 
 ## :dart: Installation
 
@@ -80,8 +82,9 @@ Article Medium to Read
 https://medium.com/@giftbalogun/laravel-integration-with-kudaopenapi-663825ecd247
 
 ## :sparkles: Usage
+Availbale coomand to be use are in `COMMAND.md` with easy to understand related to ServiceTypes.
 
-How to send request to the app
+Send request with this command.
 ```php
 
 $data = [
@@ -91,14 +94,29 @@ $data = [
     'firstName' => $request->f_name,
     'businessName' => $request->business_name,
     'trackingReference' => $customer_code,
-];
-# $data is the format for making request to the api 
+]; # $data is the format for making request to the api 
 
 $ref = rand(); #used to generate randon unique number for the request
 
 ```
 
+Styles of Calling the Controller
+```php
+use Giftbalogun\Kudaapitoken\Controllers\KudaBankController;
+
+$this->kudabankservice->create_virtual_account($data, $ref);
+```
+OR
+
+```php
+use Giftbalogun\Kudaapitoken\Kuda;
+
+$this->kuda->initController('default')->create_virtual_account($data, $ref);
+## Controllers include 'Bill', 'Card', 'GiftCard', 'KudaBank' | Default is same as KudaBank
+```
+
 # Create New Customer Accunt
+
 ```php
 <?php
 
@@ -108,7 +126,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Redirect;
 use Giftbalogun\Kudaapitoken\Controllers\KudaBankController;
 use Giftbalogun\Kudaapitoken\Kuda;
 
@@ -197,7 +214,7 @@ class CustomController extends Controller
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-## :socail: Follow
+## Social Presense
 Follow me on social media
 [Medium](https://medium.com/@giftbalogun)!
 [Twitter](https://twitter.com/am_de_one)!
