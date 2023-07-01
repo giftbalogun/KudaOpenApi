@@ -102,6 +102,14 @@ class KudaBankController extends Controller
         return $result;
     }
 
+    public function retrieve_all_virtual_account(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::ADMIN_VIRTUAL_ACCOUNTS;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+    
     // Kuda GET VIRTUAL ACCOUNT BALANCE
     //https://kudabank.gitbook.io/kudabank/check-virtual-account-balance
     public function retrieve_virtual_account_balance(array $data, $requestRef)
@@ -187,7 +195,7 @@ class KudaBankController extends Controller
         $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
-        return $result['data'];
+        return $result;
     }
 
     // Kuda POSSIBLE ERRORS WHEN INTERACTING WITH KUDA API

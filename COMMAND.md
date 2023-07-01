@@ -10,6 +10,7 @@ use Giftbalogun\Kudaapitoken\Controllers\KudaBankController;
 - disable_virtual_account
 - enable_virtual_account
 - getadminbalance
+- retrieve_all_virtual_account
 - retrieve_virtual_account
 - retrieve_virtual_account_balance
 - admin_main_account_transaction

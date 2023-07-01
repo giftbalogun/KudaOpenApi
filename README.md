@@ -19,7 +19,7 @@
 <hr>
 
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0;
+  <a href="#dart-Getting-Started">Getting Started</a> &#xa0; | &#xa0;
   <a href="#dart-installation">Installation</a> &#xa0; | &#xa0;
   <a href="#sparkles-usage">Usage</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;

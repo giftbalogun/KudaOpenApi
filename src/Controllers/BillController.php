@@ -61,7 +61,7 @@ class BillController extends Controller
 
 	public function admin_get_purchased_bills(array $data, $requestRef)
     {
-        $servicetype = ServiceTypes::ADMIN_GET_PURCHADED_BILLS;
+        $servicetype = ServiceTypes::ADMIN_GET_PURCHASED_BILLS;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -69,7 +69,7 @@ class BillController extends Controller
 
 	public function get_purchased_bills(array $data, $requestRef)
     {
-        $servicetype = ServiceTypes::GET_PURCHADED_BILLS;
+        $servicetype = ServiceTypes::GET_PURCHASED_BILLS;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
