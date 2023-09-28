@@ -1,4 +1,4 @@
-<h1 align="center">KudaOpenAPI Integration in Laravel</h1>
+<h1 align="center">KudaOpenApi Integration in Laravel</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/giftbalogun/kudaApiToken?color=56BEB8">
@@ -13,7 +13,7 @@
 <!-- Status -->
 
 <h4 align="center">
-	Laravel integration with KudaApiToken for seemless Banking via Kuda Bank Open Api
+	Laravel integration with KudaOpenApi for seemless Banking via Kuda Bank Open Api
 </h4>
 
 <hr>
