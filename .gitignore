@@ -5,3 +5,4 @@ composer.lock
 make.bat
 Makefile
 _build
+conf.py
