@@ -3,7 +3,6 @@
 All Notable changes to `kudaapitken` will be documented in this file
 
 ## 2022-07-21
-
 - Initial release
 
 ## 1.0.5
@@ -30,3 +29,8 @@ All Notable changes to `kudaapitken` will be documented in this file
 
 ## 1.0.8
 - Killed some bugs
+
+## 1.0.9
+- Code improvement wth Errors
+- Updated Contribution
+- Updated Code of Conduct

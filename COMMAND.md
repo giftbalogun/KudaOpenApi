@@ -21,6 +21,7 @@ use Giftbalogun\Kudaapitoken\Controllers\KudaBankController;
 - virtual_fund_transfer
 - fund_virtual_account
 
+
 # Bill/Utility API
 use Giftbalogun\Kudaapitoken\Controllers\BillController;
 
@@ -31,6 +32,7 @@ use Giftbalogun\Kudaapitoken\Controllers\BillController;
 - bill_tsq
 - admin_get_purchased_bills
 - get_purchased_bills
+
 
 # Savings API
 use Giftbalogun\Kudaapitoken\Controllers\SavingController;
@@ -56,6 +58,7 @@ use Giftbalogun\Kudaapitoken\Controllers\GiftCardController;
 - admin_buygiftcard
 - buygiftcard
 - giftcard_tsq
+
 
 # KudaCard API
 use Giftbalogun\Kudaapitoken\Controllers\CardController;
