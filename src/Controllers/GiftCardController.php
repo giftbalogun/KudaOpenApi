@@ -17,11 +17,11 @@ class GiftCardController extends Controller
 
     // View List of Gift Cards
     //https://kudabank.gitbook.io/kudabank/kuda-api-documentation/kuda-gift-cards/view-list-of-gift-cards
-    public function getgiftcard(array $data, $requestRef)
+    public function getgiftcard($requestRef)
     {
         $servicetype = ServiceTypes::GET_GIFT_CARD;
-        $payload = $data;
-        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+        // $payload = $data;
+        $result = $this->kuda->makeRequest($servicetype,  $requestRef);
 
         return $result;
     }

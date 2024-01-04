@@ -34,3 +34,7 @@ All Notable changes to `kudaapitken` will be documented in this file
 - Code improvement wth Errors
 - Updated Contribution
 - Updated Code of Conduct
+
+## 1.1.0
+- Code improvement wth Errors
+- Bug Fixes and Improvement

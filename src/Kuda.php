@@ -5,6 +5,7 @@ namespace Giftbalogun\Kudaapitoken;
 use Illuminate\Support\Str;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Http;
+use \Vurl\Vurl;
 
 class Kuda
 {
@@ -94,7 +95,6 @@ class Kuda
         }
     }
 
-
     // Kuda PASS BEARER TOKEN TO REQUEST
     public function makeRequest(
         string $action,
@@ -115,9 +115,8 @@ class Kuda
             $statusCode = $response->status();
 
             if ($statusCode >= 200 && $statusCode < 300) {
-                // Successful response (2xx)
-                return $response;
-                // return response()->json($response);
+                $data = $response->json(); // JSON-decode the response body
+                return $data;
             } elseif ($statusCode == 400) {
                 // Bad Request (400)
                 return [
@@ -177,7 +176,6 @@ class Kuda
             ];
         }
     }
-
 
     public function initController($controller)
     {
