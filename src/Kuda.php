@@ -31,7 +31,7 @@ class Kuda
         $this->email = env('KUDA_USER_EMAIL');
 
         // SET ENVIRONMENT REQUEST ENDPOINT
-        $this->baseUri = Str::of($this->env)->lower()->is('live') ? 'https://kuda-openapi.kuda.com/v2.1/' : 'http://kuda-openapi-uat.kudabank.com/v2.1/';
+        $this->baseUri = Str::of($this->env)->lower()->is('live') ? 'https://kuda-openapi.kuda.com/v2.1/' : 'https://kuda-openapi-uat.kudabank.com/v2.1/';
     }
 
     /*
@@ -48,9 +48,11 @@ class Kuda
                 'Content-Type' => 'application/json',
                 'Cache-Control' => 'no-cache',
             ])->post($url, [
-                        'email' => $this->email,
-                        'apikey' => $this->apitoken,
-                    ]);
+                'email' => $this->email,
+                'apikey' => $this->apitoken,
+            ]);
+
+            \Log::alert($response);
 
             $statusCode = $response->status();
 
