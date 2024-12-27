@@ -43,3 +43,11 @@ All Notable changes to `kudaapitken` will be documented in this file
 - Code improvement wth Errors
 - Bug Fixes and Improvement
 - Updated Kuda API
+
+## 1.1.2
+- Code improvement wth Errors
+- Bug Fixes and Improvement
+
+## 1.1.3
+- Code improvement wth Errors
+- Bug Fixes and Improvement

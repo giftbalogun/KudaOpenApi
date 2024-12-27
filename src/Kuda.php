@@ -52,8 +52,6 @@ class Kuda
                 'apikey' => $this->apitoken,
             ]);
 
-            \Log::alert($response);
-
             $statusCode = $response->status();
 
             if ($statusCode >= 200 && $statusCode < 300) {
