@@ -10,31 +10,33 @@
   <img alt="License" src="https://img.shields.io/github/license/giftbalogun/kudaApiToken?style=plastic&color=56BEB8">
 </p>
 
-<!-- Status -->
-
 <h4 align="center">
 	Laravel integration with KudaOpenApi for seemless Banking via Kuda Bank Open Api
 </h4>
 
 <hr>
 
-<p align="center">
-  <a href="#dart-Getting-Started">Getting Started</a> &#xa0; | &#xa0;
-  <a href="#dart-installation">Installation</a> &#xa0; | &#xa0;
-  <a href="#sparkles-usage">Usage</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/giftbalogun" target="_blank">Author</a>
-</p>
+## Table of Contents  
+1. [Getting Started](#dart-getting-started)  
+2. [Installation](#dart-installation)  
+3. [Usage](#sparkles-usage)  
+4. [Documentation](#star-documentation)  
+5. [Testing and Debugging](#wrench-testing-and-debugging)  
+6. [License](#memo-license)  
+7. [Social Presence](#mega-social-presence)  
 
 <br>
 
 ## :dart: Getting Started
 
-Enable your product for local transactions with the KUDA Open API platform! With the KUDA Open APIs you can embed services unto your platform and connect your customers to a wide range of banking services.
+Enable your product for local transactions with the KUDA Open API platform! With the KUDA Open APIs, you can embed services on your platform and connect your customers to a wide range of banking services.
 
-Before you proceed, ensure you have a [KUDA Business account](https://business.kuda.com/)!. You can link this account to your profile to get approved for live. 
+> **Note:** Ensure you have a [KUDA Business account](https://business.kuda.com/) linked to your profile for live access.
 
-Generate a token from your developer dashboard.
+### Steps:
+1. Sign up for a KUDA Business account.
+2. Generate an API token from your developer dashboard.
+3. Proceed with the installation and configuration below.
 
 ## :dart: Installation
 
@@ -82,7 +84,8 @@ Article Medium to Read
 https://medium.com/@giftbalogun/laravel-integration-with-kudaopenapi-663825ecd247
 
 ## :sparkles: Usage
-Availbale coomand to be use are in `COMMAND.md` with easy to understand related to ServiceTypes.
+
+Availbale coomand to be use are in [COMMAND](COMMAND.md) file with easy to understand related to ServiceTypes.
 
 Send request with this command.
 ```php
