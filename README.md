@@ -86,7 +86,7 @@ Availbale coomand to be use are in `COMMAND.md` with easy to understand related 
 
 Send request with this command.
 ```php
-
+//simple
 $data = [
     'email' => $request->email,
     'phoneNumber' => $request->phone,
@@ -97,6 +97,24 @@ $data = [
 ]; # $data is the format for making request to the api 
 
 $ref = rand(); #used to generate randon unique number for the request
+
+//For Pay with Transfer
+$data = [
+    "Amount"=>5000000,
+    "IsFlexiblePayment"=>true, //true or false
+    "RemittingAccounts"=>[
+    {
+        "SplitPercentage"=>50,
+        "AccountName"=>"foods",
+        "AccountNumber"=>"3020806687"
+    },
+    {
+        "SplitPercentage"=>50,
+        "AccountName"=>"foods",
+        "AccountNumber"=>"3020808612"
+    }
+    ]
+];
 
 ```
 

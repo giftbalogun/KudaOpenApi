@@ -3,8 +3,8 @@
 namespace Giftbalogun\Kudaapitoken\Controllers;
 
 use Illuminate\Routing\Controller;
-use Giftbalogun\Kudaapitoken\Controllers\ServiceTypes;
 use Giftbalogun\Kudaapitoken\Kuda;
+use Giftbalogun\Kudaapitoken\Controllers\ServiceTypes;
 
 /**
  * KudaOpenApi laravel package
@@ -12,6 +12,11 @@ use Giftbalogun\Kudaapitoken\Kuda;
  * @version 1
  **/
 
+/*
+|--------------------------------------------------------------------------
+| kKUDABANKCONTROLLER
+|--------------------------------------------------------------------------
+*/
 class KudaBankController extends Controller
 {
     private Kuda $kuda;
@@ -192,6 +197,24 @@ class KudaBankController extends Controller
     public function fund_virtual_account(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::FUND_VIRTUAL_ACCOUNT;
+        $payload = $data;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
+    public function retrieve_statement(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::RETRIEVE_STATEMENT;
+        $payload = $data;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
+    public function collection_account_fund_transfer(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::COLLECTION_ACCOUNT_FUND_TRANSFER;
         $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 

@@ -3,9 +3,19 @@
 namespace Giftbalogun\Kudaapitoken\Controllers;
 
 use Illuminate\Routing\Controller;
-use Giftbalogun\Kudaapitoken\Controllers\ServiceTypes;
 use Giftbalogun\Kudaapitoken\kuda;
+use Giftbalogun\Kudaapitoken\Controllers\ServiceTypes;
+/**
+ * KudaOpenApi laravel package
+ * @author Gift Balogun - amdeone <balogunigift@gmail.com>
+ * @version 1
+ **/
 
+/*
+|--------------------------------------------------------------------------
+| SAVING CONTROLLER
+|--------------------------------------------------------------------------
+*/
 class SavingController extends Controller
 {
     private Kuda $kuda;
