@@ -67,6 +67,14 @@ and add This
 
 You'll then need to run `composer install` or `composer update --prefer-dist` to download it and have the autoloader updated.
 
+## ⚙️ Configuration
+
+Publish the configuration file:
+
+```bash
+php artisan vendor:publish --provider="Giftbalogun\Kudaapitoken\KudaApiTokenServiceProvider"
+```
+
 Open your .env file and add your public key, secret key, merchant email and payment url like so:
 
 ```php
@@ -136,7 +144,18 @@ $this->kuda->initController('default')->create_virtual_account($data, $ref);
 ## Controllers include 'Bill', 'Card', 'GiftCard', 'KudaBank' | Default is same as KudaBank
 ```
 
-# Create New Customer Accunt
+## ⚡️ Available Controllers
+
+```php
+$kuda->initController('Bill');
+$kuda->initController('Card');
+$kuda->initController('Saving');
+$kuda->initController('PayWith');
+$kuda->initController('KudaBank'); // default
+$kuda->initController('GiftCard');
+```
+
+# ⚡️ Example: Creating a Customer Account
 
 ```php
 <?php
@@ -190,7 +209,32 @@ class CustomController extends Controller
 }
 ```
 
-# Get Admin Balance
+# ⚡️ Example: Calling Status Helper
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Giftbalogun\Kudaapitoken\KudaStatusCodes;
+
+class CustomController extends Controller
+{
+    public function createcustomeraccount()
+    {
+        $code = '00';
+        $message = KudaStatusCodes::getMessage($code, 'kuda_to_kuda');
+
+        echo $message ?? 'Unknown Status';  // Output: Successful
+    }
+}
+```
+
+# 💸 Example: Get Admin Balance
 
 ```php
 <?php

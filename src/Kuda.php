@@ -6,6 +6,7 @@ use \Vurl\Vurl;
 use Illuminate\Support\Str;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 
 class Kuda
 {
@@ -21,14 +22,14 @@ class Kuda
     */
     public function __construct()
     {
-        //SET WORKING ENVIRONMENT
-        $this->env = env('ENVIRONMENT_ENV');
-
-        // Kuda API TOKEN FROM DEVELOPER ACCOUNT
-        $this->apitoken = env('KUDA_API_TOKEN');
-
         // Kuda USER EMAIL FOR DEVELOPER ACCOUNT
-        $this->email = env('KUDA_USER_EMAIL');
+        $this->email = config('kudaapitoken.api_email');
+        
+        // Kuda API TOKEN FROM DEVELOPER ACCOUNT
+        $this->apitoken = config('kudaapitoken.api_token');
+
+        //SET WORKING ENVIRONMENT
+        $this->env = config('kudaapitoken.environment_type');
 
         // SET ENVIRONMENT REQUEST ENDPOINT
         $this->baseUri = Str::of($this->env)->lower()->is('live') ? 'https://kuda-openapi.kuda.com/v2.1/' : 'https://kuda-openapi-uat.kudabank.com/v2.1/';
@@ -41,65 +42,68 @@ class Kuda
     */
     public function getToken()
     {
-        $url = $this->baseUri . 'Account/GetToken';
+        return Cache::remember('kuda_api_token', now()->addMinutes(30), function () {
+            $url = $this->baseUri . 'Account/GetToken';
 
-        try {
-            $response = Http::withHeaders([
-                'Content-Type' => 'application/json',
-                'Cache-Control' => 'no-cache',
-            ])->post($url, [
-                'email' => $this->email,
-                'apikey' => $this->apitoken,
-            ]);
+            try {
+                $response = Http::withHeaders([
+                    'Content-Type' => 'application/json',
+                    'Cache-Control' => 'no-cache',
+                ])->post($url, [
+                    'email' => $this->email,
+                    'apikey' => $this->apitoken,
+                ]);
 
-            $statusCode = $response->status();
+                $statusCode = $response->status();
 
-            if ($statusCode >= 200 && $statusCode < 300) {
-                return $response;
-            } 
-            if ($statusCode == 400) {
+                if ($statusCode >= 200 && $statusCode < 300) {
+                    \Log::info($response->body());
+                    return $response->body();
+                } 
+                if ($statusCode == 400) {
+                    return [
+                        'error' => 'Bad Request',
+                        'message' => $response->json('message', 'Unknown error'),
+                    ];
+                } 
+                if ($statusCode == 401) {
+                    return [
+                        'error' => 'Unauthorized',
+                        'message' => $response->json('message', 'Unknown error'),
+                    ];
+                } 
+                if ($statusCode == 403) {
+                    return [
+                        'error' => 'Forbidden',
+                        'message' => $response->json('message', 'Unknown error'),
+                    ];
+                } 
+                if ($statusCode == 404) {
+                    return [
+                        'error' => 'Not Found',
+                        'message' => $response->json('message', 'Unknown error'),
+                    ];
+                } 
+                if ($statusCode >= 500) {
+                    return [
+                        'error' => 'Server Error',
+                        'message' => $response->json('message', 'Unknown error'),
+                    ];
+                }
+                
                 return [
-                    'error' => 'Bad Request',
+                    'error' => 'Unexpected Status Code: ' . $statusCode,
                     'message' => $response->json('message', 'Unknown error'),
                 ];
-            } 
-            if ($statusCode == 401) {
+                
+            } catch (\Throwable $th) {
+                // Handle other exceptions
                 return [
-                    'error' => 'Unauthorized',
-                    'message' => $response->json('message', 'Unknown error'),
-                ];
-            } 
-            if ($statusCode == 403) {
-                return [
-                    'error' => 'Forbidden',
-                    'message' => $response->json('message', 'Unknown error'),
-                ];
-            } 
-            if ($statusCode == 404) {
-                return [
-                    'error' => 'Not Found',
-                    'message' => $response->json('message', 'Unknown error'),
-                ];
-            } 
-            if ($statusCode >= 500) {
-                return [
-                    'error' => 'Server Error',
-                    'message' => $response->json('message', 'Unknown error'),
+                    'error' => 'Exception',
+                    'message' => $th->getMessage(),
                 ];
             }
-            
-            return [
-                'error' => 'Unexpected Status Code: ' . $statusCode,
-                'message' => $response->json('message', 'Unknown error'),
-            ];
-            
-        } catch (\Throwable $th) {
-            // Handle other exceptions
-            return [
-                'error' => 'Exception',
-                'message' => $th->getMessage(),
-            ];
-        }
+        });
     }
 
     /*
@@ -113,8 +117,10 @@ class Kuda
         $requestRef = null
     ) {
         try {
+            $token = $this->getToken();  
+            
             $response = Http::withHeaders([
-                'Authorization' => 'Bearer ' . $this->getToken(),
+                'Authorization' => 'Bearer ' . $token,
                 'Accept' => 'application/json',
             ])->post($this->baseUri, [
                 'servicetype' => $action,

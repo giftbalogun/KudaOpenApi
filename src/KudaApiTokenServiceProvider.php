@@ -22,6 +22,9 @@ class KudaApiTokenServiceProvider extends ServiceProvider
     {
         // Migration
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
+        $this->publishes([
+            __DIR__ . '/config/kudaapitoken.php' => config_path('kudaapitoken.php'),
+        ], 'kuda-config');
     }
     /**
      * Register the service provider.

@@ -51,3 +51,9 @@ All Notable changes to `kudaapitken` will be documented in this file
 ## 1.1.3
 - Code improvement wth Errors
 - Bug Fixes and Improvement
+
+## 1.1.4
+- Code improvement wth Errors
+- Bug Fixes and Improvement
+- Added Config
+- Added StatusCode Helper
