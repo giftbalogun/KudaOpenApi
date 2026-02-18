@@ -13,10 +13,10 @@ use Giftbalogun\Kudaapitoken\Controllers\ServiceTypes;
 
 /*
 |--------------------------------------------------------------------------
-| PayWithController
+| KudaBulkController
 |--------------------------------------------------------------------------
 */
-class PayWithController extends Controller
+class KudaBulkController extends Controller
 {
     private Kuda $kuda;
 
@@ -25,17 +25,33 @@ class PayWithController extends Controller
         $this->kuda = app(Kuda::class);
     }
 
-    public function create_flexible_account(array $data, $requestRef)
+    public function bulk_name_enquiry(array $data, $requestRef)
     {
-        $servicetype = ServiceTypes::ADMIN_CREATE_DYNAMIC_COLLECTION_ACCOUNT;
+        $servicetype = ServiceTypes::BULK_NAME_ENQUIRY;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
     }
 
-    public function dynamic_account_tsq(array $data, $requestRef)
+    public function collect_acc_bulk_pay(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::DYNAMIC_COLLECTION_ACCOUNT_TSQ;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
+    public function main_acc_bulk_pay(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::MAIN_ACCOUNT_BULK_PAYMENT;
+        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+
+        return $result;
+    }
+
+    public function bulk_payment_tsq(array $data, $requestRef)
+    {
+        $servicetype = ServiceTypes::BULK_PAYMENT_TSQ;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;

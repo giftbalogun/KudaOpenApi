@@ -30,7 +30,6 @@ class CardController extends Controller
     public function requestcard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::REQUEST_CARD;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -40,7 +39,7 @@ class CardController extends Controller
     public function getcustomercard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::GET_CUSTOMER_CARDS;
-        $payload = $data;
+
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -50,7 +49,6 @@ class CardController extends Controller
     public function activatecard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::ACTIVATE_CARD;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -60,7 +58,6 @@ class CardController extends Controller
     public function deactivatecard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::DEACTIVATE_CARD;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -70,7 +67,6 @@ class CardController extends Controller
     public function managecardlimit(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::MANAGE_CARD_TRANSACTION_LIMIT;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -80,7 +76,6 @@ class CardController extends Controller
     public function managecardchannel(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::MANAGE_CARD_CHANNEL;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -90,7 +85,6 @@ class CardController extends Controller
     public function getcardpin(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::GET_CARD_PIN;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -100,7 +94,6 @@ class CardController extends Controller
     public function changecardpin(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::CHANGE_CARD_PIN;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -110,7 +103,6 @@ class CardController extends Controller
     public function blockcard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::BLOCK_CARD;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -120,7 +112,6 @@ class CardController extends Controller
     public function unblockcard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::UNBLOCK_CARD;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;

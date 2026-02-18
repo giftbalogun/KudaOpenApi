@@ -40,7 +40,6 @@ class GiftCardController extends Controller
     public function admin_buygiftcard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::ADMIN_BUY_GIFT_CARD;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -50,7 +49,6 @@ class GiftCardController extends Controller
     public function buygiftcard(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::BUY_GIFT_CARD;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -60,7 +58,6 @@ class GiftCardController extends Controller
     public function giftcard_tsq(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::GIFT_CARD_TSQ;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;

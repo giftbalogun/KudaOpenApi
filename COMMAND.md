@@ -118,3 +118,11 @@ use Giftbalogun\Kudaapitoken\Controllers\PayWithController;
 - dynamic_account_tsq
 - create_flexible_account
 
+# KudaBulkPayments API
+use Giftbalogun\Kudaapitoken\Controllers\KudaBulkController;
+
+- bulk_payment_tsq
+- main_acc_bulk_pay
+- bulk_name_enquiry
+- collect_acc_bulk_pay
+

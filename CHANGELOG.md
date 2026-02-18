@@ -57,3 +57,8 @@ All Notable changes to `kudaapitken` will be documented in this file
 - Bug Fixes and Improvement
 - Added Config
 - Added StatusCode Helper
+
+## 1.1.5
+- Bug Fixes and Improvement
+- Added Kuda Bulk Payment
+- Updated Command

@@ -29,7 +29,7 @@ class SavingController extends Controller
     {
         $servicetype = ServiceTypes::RETRIEVE_SPEND_AND_SAVE_TRANSACTIONS;
         $payload = $data;
-        $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
+        $result = $this->kuda->makeRequest($servicetype, $payload, $requestRef);
 
         return $result;
     }

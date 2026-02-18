@@ -117,4 +117,13 @@ class ServiceTypes
     // const MANAGE_CARD_CHANNEL = 'MANAGE_CARD_CHANNEL';
     // const MANAGE_CARD_TRANSACTION_LIMIT = 'MANAGE_CARD_TRANSACTION_LIMIT';
 
+    /*
+    |--------------------------------------------------------------------------
+    | KUDA BULK PAYMENTS
+    |--------------------------------------------------------------------------
+    */
+    const BULK_NAME_ENQUIRY = 'BULK_NAME_ENQUIRY';
+    const BULK_TRANSFER_TSQ = 'BULK_TRANSFER_TSQ';
+    const MAIN_ACCOUNT_BULK_PAYMENT = 'MAIN_ACCOUNT_BULK_PAYMENT';
+    const COLLECTION_ACCOUNT_BULK_PAYMENT = 'COLLECTION_ACCOUNT_BULK_PAYMENT';
 }

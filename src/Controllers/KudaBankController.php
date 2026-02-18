@@ -53,7 +53,6 @@ class KudaBankController extends Controller
     public function create_virtual_account(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::ADMIN_CREATE_VIRTUAL_ACCOUNT;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -62,7 +61,6 @@ class KudaBankController extends Controller
     public function update_virtual_account(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::ADMIN_UPDATE_VIRTUAL_ACCOUNT;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -71,7 +69,6 @@ class KudaBankController extends Controller
     public function disable_virtual_account(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::ADMIN_DISABLE_VIRTUAL_ACCOUNT;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -80,7 +77,6 @@ class KudaBankController extends Controller
     public function enable_virtual_account(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::ADMIN_ENABLE_VIRTUAL_ACCOUNT;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -91,7 +87,6 @@ class KudaBankController extends Controller
     public function getadminbalance(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::ADMIN_RETRIEVE_MAIN_ACCOUNT_BALANCE;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -197,7 +192,6 @@ class KudaBankController extends Controller
     public function fund_virtual_account(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::FUND_VIRTUAL_ACCOUNT;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -206,7 +200,6 @@ class KudaBankController extends Controller
     public function retrieve_statement(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::RETRIEVE_STATEMENT;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
@@ -215,7 +208,6 @@ class KudaBankController extends Controller
     public function collection_account_fund_transfer(array $data, $requestRef)
     {
         $servicetype = ServiceTypes::COLLECTION_ACCOUNT_FUND_TRANSFER;
-        $payload = $data;
         $result = $this->kuda->makeRequest($servicetype, $data, $requestRef);
 
         return $result;
