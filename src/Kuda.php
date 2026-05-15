@@ -113,7 +113,7 @@ class Kuda
     */
     public function makeRequest(
         string $action,
-        array $payload,
+        array $payload = [],
         $requestRef = null
     ) {
         try {
